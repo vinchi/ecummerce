@@ -18,7 +18,7 @@
               <tr>
                 <td class="py-4">
                   <div class="flex items-center">
-                    <img class="w-16 h-16 mr-4" src="https://via.placeholder.com/150" alt="Product image">
+                    <img class="w-16 h-16 mr-4" src="https://placehold.co/400" alt="Product image">
                     <span class="font-semibold">Product name</span>
                   </div>
                 </td>
