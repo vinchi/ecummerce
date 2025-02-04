@@ -8,6 +8,7 @@ export default {
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
+        'node_modules/preline/dist/*.js',
     ],
     theme: {
         extend: {
@@ -16,5 +17,8 @@ export default {
             },
         },
     },
-    plugins: [],
+    darkMode: 'class',
+    plugins: [
+        require('preline/plugin'),
+    ],
 };
