@@ -1,0 +1,139 @@
+{
+    "project": "Laravel Development Rules",
+    "version": "1.0",
+    "rules": {
+        "commenting": {
+            "class_comment": {
+                "required": true,
+                "format": [
+                    "/**",
+                    " * [클래스명]",
+                    " *",
+                    " * [클래스 설명]",
+                    " *",
+                    " * @package [패키지명]",
+                    " * @author [작성자]",
+                    " */"
+                ]
+            },
+            "method_comment": {
+                "required": true,
+                "format": [
+                    "/**",
+                    " * [메서드 설명]",
+                    " *",
+                    " * @param [파라미터 타입] [파라미터명] [설명]",
+                    " * @return [반환타입] [설명]",
+                    " * @throws [예외클래스] [예외설명]",
+                    " */"
+                ]
+            }
+        },
+        "naming_conventions": {
+            "class": {
+                "pattern": "PascalCase",
+                "prefix": "",
+                "suffix": ""
+            },
+            "method": {
+                "pattern": "camelCase",
+                "prefix": "",
+                "suffix": ""
+            },
+            "variable": {
+                "pattern": "camelCase",
+                "prefix": "",
+                "suffix": ""
+            },
+            "constant": {
+                "pattern": "UPPER_CASE",
+                "prefix": "",
+                "suffix": ""
+            }
+        },
+        "directory_structure": {
+            "controllers": "app/Http/Controllers",
+            "models": "app/Models",
+            "services": "app/Services",
+            "repositories": "app/Repositories",
+            "interfaces": "app/Interfaces",
+            "traits": "app/Traits"
+        },
+        "design_patterns": {
+            "repository_pattern": {
+                "required": true,
+                "structure": {
+                    "interface": "interface {EntityName}RepositoryInterface",
+                    "implementation": "class {EntityName}Repository implements {EntityName}RepositoryInterface"
+                }
+            },
+            "service_pattern": {
+                "required": true,
+                "structure": {
+                    "interface": "interface {EntityName}ServiceInterface",
+                    "implementation": "class {EntityName}Service implements {EntityName}ServiceInterface"
+                }
+            }
+        },
+        "code_quality": {
+            "max_method_length": 20,
+            "max_class_length": 200,
+            "max_parameters": 5,
+            "complexity_threshold": 10
+        },
+        "testing": {
+            "unit_tests": {
+                "required": true,
+                "naming": "Test{ClassName}Test",
+                "coverage_minimum": 80
+            },
+            "feature_tests": {
+                "required": true,
+                "naming": "{FeatureName}Test"
+            }
+        },
+        "database": {
+            "naming": {
+                "table": "snake_case",
+                "column": "snake_case",
+                "primary_key": "id",
+                "foreign_key": "{table_name}_id"
+            },
+            "migrations": {
+                "naming": "create_{table_name}_table",
+                "timestamp_required": true
+            }
+        },
+        "api": {
+            "response_format": {
+                "success": {
+                    "status": "success",
+                    "data": {},
+                    "message": ""
+                },
+                "error": {
+                    "status": "error",
+                    "error": {},
+                    "message": ""
+                }
+            },
+            "versioning": {
+                "required": true,
+                "format": "v1"
+            }
+        },
+        "security": {
+            "input_validation": "required",
+            "xss_protection": "required",
+            "csrf_protection": "required",
+            "sql_injection_prevention": "required"
+        }
+    },
+    "ignored_paths": [
+        "vendor/",
+        "node_modules/",
+        "storage/",
+        "public/",
+        "bootstrap/cache/"
+    ]
+}
